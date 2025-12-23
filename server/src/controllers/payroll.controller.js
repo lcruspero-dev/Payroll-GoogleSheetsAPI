@@ -45,13 +45,13 @@ export const show = async (req, res) => {
 
     if (!payroll)
       return res.status(404).json({
-        status: "Success",
+        status: "Error",
         message: "Payroll not found",
       });
 
     res.status(200).json({
       status: "Success",
-      messag: "Fetch payroll successfully",
+      message: "Fetch payroll successfully",
       payroll,
     });
   } catch (error) {
@@ -66,7 +66,7 @@ export const show = async (req, res) => {
 export const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const updates = req.bdy;
+    const updates = req.body;
 
     const payroll = await Payroll.findByIdAndUpdate(id, updates, {
       new: true,
@@ -106,12 +106,11 @@ export const destroy = async (req, res) => {
       status: "Success",
       mesage: "Delete payroll successfully",
     });
-
   } catch (error) {
-    console.error("Internal Server Error", error);
+    console.error("Failed to dekete payroll", error);
     res.status(500).json({
-        status: "Error",
-        message: "Internal Server Error"
+      status: "Error",
+      message: "Internal Server Error",
     });
   }
 };
