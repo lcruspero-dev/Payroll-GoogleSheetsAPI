@@ -44,7 +44,8 @@ export const signin = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email }).select("+passowrd");
+    const user = await User.findOne({ email }).select("+password");
+
     if (!user) {
       return res.status(400).json({
         status: "Error",
@@ -52,7 +53,7 @@ export const signin = async (req, res) => {
       });
     }
 
-    const isMatch = await User.comparePassword(password);
+    const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       return res.status(400).json({
         status: "Error",
@@ -68,7 +69,7 @@ export const signin = async (req, res) => {
       user: userData,
     });
   } catch (error) {
-    console.error("Signin Error", error);
+    console.error("Signin Error:", error);
     res.status(500).json({
       status: "Error",
       message: "Internal Server Error",

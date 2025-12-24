@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import user from "../server/src/routes/user.route.js";
-import auth from "../server/src/routes/user.route.js";
+import auth from "../server/src/routes/auth.route.js";
 import payroll from "../server/src/routes/payroll.route.js";
 
 dotenv.config();
@@ -34,9 +34,9 @@ app.use(
   })
 );
 
-app.use("api/auth/", auth);
-app.use("api/user/", user);
-app.use("api/payroll/", payroll);
+app.use("/api/auth/", auth);
+app.use("/api/user/", user);
+app.use("/api/payroll/", payroll);
 
 app.use((req, res) => {
   res.status(404).json({

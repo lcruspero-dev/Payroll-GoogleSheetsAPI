@@ -19,7 +19,7 @@ router.delete("/payrolls/:id", PayrollController.destroy);
 router.post("/compoensations", CompensationController.store);
 router.get("/compoensations", CompensationController.index);
 router.get("/compoensations/:id", CompensationController.show);
-router.update("/compoensations/:id", CompensationController.update);
+router.put("/compoensations/:id", CompensationController.update);
 router.delete("/compoensations/:id", CompensationController.destroy);
 
 export default router;
