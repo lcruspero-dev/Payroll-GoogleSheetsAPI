@@ -138,7 +138,7 @@ export const destroy = async (req, res) => {
     console.error("Failed to delete compensation", error);
 
     res.status(500).json({
-      status: "Success",
+      status: "Error",
       message: "Internal Server Error",
     });
   }
