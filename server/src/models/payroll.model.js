@@ -1,27 +1,27 @@
-    import mongoose from "mongoose";
+import mongoose from "mongoose";
 
-    const PayrollSchema = new mongoose.Schema(
-    {
-        user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-        },
-        salary: {
-        type: Number,
-        required: true,
-        },
-        payPeriod: {
-        type: String,
-        required: true,
-        },
-        status: {
-        type: String,
-        enum: ["PENDING", "PAID"],
-        default: "PENDING",
-        },
+const PayrollSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
-    { timestamps: true }
-    );
+    salary: {
+      type: Number,
+      required: true,
+    },
+    payPeriod: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: ["PENDING", "PAID"],
+      default: "PENDING",
+    },
+  },
+  { timestamps: true }
+);
 
-    export default mongoose.model("Payroll", PayrollSchema);
+export default mongoose.model("Payroll", PayrollSchema);

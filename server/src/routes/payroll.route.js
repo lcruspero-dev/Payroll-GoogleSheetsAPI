@@ -4,14 +4,18 @@ import * as CompensationController from "../controllers/compensation.controller.
 
 const router = Router();
 
-{/** Payroll Routes */}
+{
+  /** Payroll Routes */
+}
 router.post("/payrolls", PayrollController.store);
 router.get("/payrolls", PayrollController.index);
 router.get("/payrolls/:id", PayrollController.show);
 router.put("/payrolls/:id", PayrollController.update);
 router.delete("/payrolls/:id", PayrollController.destroy);
 
-{/** Compensation Routes */}
+{
+  /** Compensation Routes */
+}
 router.post("/compoensations", CompensationController.store);
 router.get("/compoensations", CompensationController.index);
 router.get("/compoensations/:id", CompensationController.show);
@@ -19,4 +23,3 @@ router.update("/compoensations/:id", CompensationController.update);
 router.delete("/compoensations/:id", CompensationController.destroy);
 
 export default router;
-
