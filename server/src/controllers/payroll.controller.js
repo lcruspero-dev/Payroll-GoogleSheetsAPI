@@ -23,7 +23,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
   try {
-    const payrolls = Payroll.find().populate("user");
+    const payrolls = await Payroll.find().populate("user");
     res.status(200).json({
       status: "Success",
       message: "Fetch payrolls successfully",

@@ -4,22 +4,18 @@ import * as CompensationController from "../controllers/compensation.controller.
 
 const router = Router();
 
-{
-  /** Payroll Routes */
-}
-router.post("/payrolls", PayrollController.store);
-router.get("/payrolls", PayrollController.index);
-router.get("/payrolls/:id", PayrollController.show);
-router.put("/payrolls/:id", PayrollController.update);
-router.delete("/payrolls/:id", PayrollController.destroy);
+/** Payroll Routes */
+router.post("/", PayrollController.store);
+router.get("/", PayrollController.index);
+router.get("/:id", PayrollController.show);
+router.put("/:id", PayrollController.update);
+router.delete("/:id", PayrollController.destroy);
 
-{
-  /** Compensation Routes */
-}
-router.post("/compoensations", CompensationController.store);
-router.get("/compoensations", CompensationController.index);
-router.get("/compoensations/:id", CompensationController.show);
-router.put("/compoensations/:id", CompensationController.update);
-router.delete("/compoensations/:id", CompensationController.destroy);
+/** Compensation Routes */
+router.post("/compensations", CompensationController.store);
+router.get("/compensations", CompensationController.index);
+router.get("/compensations/:id", CompensationController.show);
+router.put("/compensations/:id", CompensationController.update);
+router.delete("/compensations/:id", CompensationController.destroy);
 
 export default router;

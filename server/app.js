@@ -36,7 +36,7 @@ app.use(
 
 app.use("/api/auth/", auth);
 app.use("/api/user/", user);
-app.use("/api/payroll/", payroll);
+app.use("/api/payrolls/", payroll);
 
 app.use((req, res) => {
   res.status(404).json({

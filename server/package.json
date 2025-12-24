@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js --ignore client",
-    "dev": "concurently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently  \"npm run server\" \"npm run client\"",
     "client": "npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
